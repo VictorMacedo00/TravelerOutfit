@@ -1,0 +1,21 @@
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 40px;
+    background-color: #000;
+    bottom: 0;
+}
+
+.footerContent {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.footerContent p {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+}

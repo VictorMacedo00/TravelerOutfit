@@ -1,0 +1,23 @@
+<div class="bannerPrincipal">
+  <div class="containerPrincipal">
+    <h1>Moda Feminina</h1>
+  </div>
+</div>
+<div class="itens">
+  <div class="containerItens">
+    <div class="cardItem" *ngFor="let blusaFeminina of blusasFemininas">
+      <div class="bgCard">
+        <div class="cardImage">
+          <div class="tamanho"> {{ blusaFeminina.tamanho }} </div>
+        </div>
+        <div class="infos">
+          <ul>
+            <li class="preco">R$ {{ blusaFeminina.preco }} </li>
+            <li class="nome">{{ blusaFeminina.nome }}</li>
+            <li class="marca">{{ blusaFeminina.marca }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

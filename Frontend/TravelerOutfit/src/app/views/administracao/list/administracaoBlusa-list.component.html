@@ -1,0 +1,59 @@
+<div class="layout">
+  <div class="container">
+
+    <div class="cadastro">
+      <button [routerLink]="['cadastro']">Cadastrar nova blusa</button>
+    </div>
+
+    <table class="table">
+      <caption>Blusas Masculinas</caption>
+      <tr>
+        <th>Nome</th>
+        <th>Preço</th>
+        <th>Marca</th>
+        <th>Tamanho</th>
+        <th>Genero</th>
+        <th>Cor</th>
+        <th>Ações</th>
+      </tr>
+      <tr *ngFor="let administracaoBlusaMasculina of administracaoBlusasMasculinas">
+        <td>{{ administracaoBlusaMasculina.nome }}</td>
+        <td>{{ administracaoBlusaMasculina.preco }}</td>
+        <td>{{ administracaoBlusaMasculina.marca }}</td>
+        <td>{{ administracaoBlusaMasculina.tamanho }}</td>
+        <td>{{ administracaoBlusaMasculina.genero }}</td>
+        <td>{{ administracaoBlusaMasculina.cor }}</td>
+        <td class="btn"> 
+            <button [routerLink]="['alterar', administracaoBlusaMasculina.id]">Editar</button>
+            <button (click)="deleteByIdMasculinas(administracaoBlusaMasculina.id)">Deletar</button>
+        </td>
+      </tr>
+    </table>
+
+    <table class="table feminino">
+      <caption>Blusas Femininas</caption>
+      <tr>
+        <th>Nome</th>
+        <th>Preço</th>
+        <th>Marca</th>
+        <th>Tamanho</th>
+        <th>Genero</th>
+        <th>Cor</th>
+        <th>Ações</th>
+      </tr>
+      <tr *ngFor="let administracaoBlusaFeminina of administracaoBlusasFemininas">
+        <td>{{ administracaoBlusaFeminina.nome }}</td>
+        <td>{{ administracaoBlusaFeminina.preco }}</td>
+        <td>{{ administracaoBlusaFeminina.marca }}</td>
+        <td>{{ administracaoBlusaFeminina.tamanho }}</td>
+        <td>{{ administracaoBlusaFeminina.genero }}</td>
+        <td>{{ administracaoBlusaFeminina.cor }}</td>
+        <td class="btn"> 
+            <button [routerLink]="['alterar', administracaoBlusaFeminina.id]">Editar</button>
+            <button (click)="deleteByIdFemininas(administracaoBlusaFeminina.id)">Deletar</button>
+        </td>
+      </tr>
+    </table>
+
+  </div>
+</div>

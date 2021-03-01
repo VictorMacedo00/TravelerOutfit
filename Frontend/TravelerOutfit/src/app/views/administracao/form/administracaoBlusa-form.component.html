@@ -1,0 +1,45 @@
+<div class="formContainer">
+
+    <div class="containerForm">
+  
+      <div class="content">
+  
+        <div class="text">
+          <h1>Cadastrar nova camiseta</h1>
+        </div>
+    
+        <form [formGroup]="administracaoBlusaForm" class="form" action="submit">
+    
+          <label for="nomeProduto">Nome do produto</label>
+          <input type="text" formControlName="nome" name="nomeProduto" id="nomeProduto" required>
+    
+          <label for="precoProduto">Preço do produto</label>
+          <input type="text" formControlName="preco" name="precoProduto" id="precoProduto" required>
+    
+          <label for="marcaProduto">Marca do produto</label>
+          <input type="text" formControlName="marca" name="marcaProduto" id="marcaProduto" required>
+    
+          <label for="tamanhoProduto">Tamanho do produto</label>
+          <input type="text" formControlName="tamanho" name="tamanhoProduto" id="tamanhoProduto" required>
+
+          <label for="generoProduto">Genero</label>
+          <select type="text" formControlName="genero" name="generoProduto" id="generoProduto" required>
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+          </select>
+    
+          <label for="corProduto">Cor do produto</label>
+          <input type="text" formControlName="cor" name="corProduto" id="corProduto" required>
+    
+        </form>
+    
+        <div class="btnControl">
+          <button type="submit" class="btn save" (click)="onSave(administracaoBlusaForm.value)">Salvar</button>
+          <button class="btn cancel" (click)="onCancel()">Cancelar</button>
+        </div>
+      </div>
+  
+    </div>
+  
+  </div>
+  

@@ -29,6 +29,7 @@ export class AdministracaoBlusaFormComponent implements OnInit {
       console.log('alterar')
       this.setValue();
     }
+
   }
 
   setValue() {
@@ -42,10 +43,10 @@ export class AdministracaoBlusaFormComponent implements OnInit {
     this.administracaoBlusaForm = this.builder.group({
       id: null,
       nome: [null, [Validators.required, Validators.maxLength(120)]],
-      preco: [null, [Validators.required, Validators.maxLength(12)]],
+      preco: [null, [Validators.required, Validators.maxLength(8)]],
       marca: [null, [Validators.required, Validators.maxLength(120)]],
-      tamanho: [null, [Validators.required, Validators.maxLength(4)]],
-      genero: [null, [Validators.required, Validators.maxLength(120)]],
+      tamanho: [null, [Validators.required, Validators.maxLength(2)]],
+      genero: [null, [Validators.required, Validators.maxLength(10)]],
       cor: [null, [Validators.required, Validators.maxLength(120)]],
     })
   }
@@ -55,6 +56,13 @@ export class AdministracaoBlusaFormComponent implements OnInit {
   }
 
   onSave(value: AdministracaoBlusa): void {
+    Object.keys(this.administracaoBlusaForm.controls).forEach(field => {
+      console.log(this.administracaoBlusaForm.get(field))
+      this.administracaoBlusaForm.get(field).markAsTouched()
+    });
+    if(this.administracaoBlusaForm.invalid) {
+      return
+    }
     console.log(value)
     this.AdministracaoBlusaService
       .save(value)

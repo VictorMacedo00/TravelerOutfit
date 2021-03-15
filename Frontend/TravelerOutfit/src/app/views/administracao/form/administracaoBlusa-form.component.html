@@ -12,24 +12,36 @@
     
           <label for="nomeProduto">Nome do produto</label>
           <input type="text" formControlName="nome" name="nomeProduto" id="nomeProduto" required>
+          <span class="error"></span>
     
           <label for="precoProduto">Preço do produto</label>
           <input type="text" formControlName="preco" name="precoProduto" id="precoProduto" required>
+          <span class="error"></span>
     
           <label for="marcaProduto">Marca do produto</label>
           <input type="text" formControlName="marca" name="marcaProduto" id="marcaProduto" required>
+          <span class="error"></span>
     
           <label for="tamanhoProduto">Tamanho do produto</label>
-          <input type="text" formControlName="tamanho" name="tamanhoProduto" id="tamanhoProduto" required>
+          <select type="text" formControlName="tamanho" name="tamanhoProduto" id="tamanhoProduto" required>
+            <option value="PP">PP</option>
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
+          </select>
+          <span class="error"></span>
 
           <label for="generoProduto">Genero</label>
           <select type="text" formControlName="genero" name="generoProduto" id="generoProduto" required>
             <option value="masculino">Masculino</option>
             <option value="feminino">Feminino</option>
           </select>
+          <span class="error"></span>
     
           <label for="corProduto">Cor do produto</label>
           <input type="text" formControlName="cor" name="corProduto" id="corProduto" required>
+          <span class="error"></span>
     
         </form>
     

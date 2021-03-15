@@ -18,4 +18,5 @@ export const CONTENT_ROUTES: Routes = [
         path: 'blusasFemininas',
             loadChildren: () => import('../../views/blusasFemininas/blusasFemininas.module').then((m) => m.BlusasFemininasModule)
     }
+    
 ];

@@ -13,4 +13,3 @@ import { AdministracaoBlusaListComponent } from "./list/AdministracaoBlusa-list.
   providers: [AdministracaoBlusaService],
 })
 export class AdministracaoBlusaModule { }
-

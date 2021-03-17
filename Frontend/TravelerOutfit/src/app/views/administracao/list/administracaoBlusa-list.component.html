@@ -25,7 +25,7 @@
         <td>{{ administracaoBlusaMasculina.cor }}</td>
         <td class="btn"> 
             <button [routerLink]="['alterar', administracaoBlusaMasculina.id]">Editar</button>
-            <button (click)="deleteByIdMasculinas(administracaoBlusaMasculina.id)">Deletar</button>
+            <button (click)="modal(administracaoBlusaMasculina.id, administracaoBlusaMasculina.genero)">Deletar</button>
         </td>
       </tr>
     </table>
@@ -50,10 +50,22 @@
         <td>{{ administracaoBlusaFeminina.cor }}</td>
         <td class="btn"> 
             <button [routerLink]="['alterar', administracaoBlusaFeminina.id]">Editar</button>
-            <button (click)="deleteByIdFemininas(administracaoBlusaFeminina.id)">Deletar</button>
+            <button (click)="modal(administracaoBlusaFeminina.id, administracaoBlusaFeminina.genero)">Deletar</button>
         </td>
       </tr>
     </table>
 
   </div>
+
+  <div class="modal inactive">
+    <div class="cardModal">
+      <button class="close" (click)="modal()">X</button>
+      <p>Deseja realmente excluir este item?</p>
+      <div class="buttonsModal">
+        <button class="btnModal delete" (click)="deleteItem()">Excluir</button>
+        <button class="btnModal cancel" (click)="modal()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
 </div>

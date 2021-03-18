@@ -1,0 +1,18 @@
+<div class="itens">
+  <div class="containerItens">
+    <div class="cardItem" *ngFor="let blusa of blusas">
+      <div class="bgCard">
+        <div class="cardImage">
+          <div class="tamanho"> {{ blusa.tamanho }} </div>
+        </div>
+        <div class="infos">
+          <ul>
+            <li class="preco">R$ {{ blusa.preco }} </li>
+            <li class="nome">{{ blusa.nome }}</li>
+            <li class="marca">{{ blusa.marca }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

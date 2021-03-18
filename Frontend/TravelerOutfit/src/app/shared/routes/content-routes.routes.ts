@@ -4,7 +4,7 @@ export const CONTENT_ROUTES: Routes = [
 
     {
         path: '',
-            loadChildren: () => import('./../../views/home/home.module').then((m) => m.HomeModule)
+            loadChildren: () => import('../../views/home/home.module').then((m) => m.HomeModule)
     },
     {
         path: 'administracaoBlusas',

@@ -26,61 +26,63 @@ export class AdministracaoBlusaListComponent implements OnInit {
   generoDelete: String
 
   ngOnInit(): void {
-     this.findAllAdministracaoBlusasMasculinas();
-     this.findAllAdministracaoBlusasFemininas();
+    this.findAllAdministracaoBlusasMasculinas();
+    this.findAllAdministracaoBlusasFemininas();
   }
 
 
-   findAllAdministracaoBlusasMasculinas() {
-     this.administracaoBlusaService
-       .findaAll()
-       .subscribe((Response) => (this.administracaoBlusasMasculinas = Response.filter((blusasMasculinas) => {
-         if (blusasMasculinas.genero == 'masculino') {
-           return blusasMasculinas
-         }
-       })));
-   }
+  findAllAdministracaoBlusasMasculinas() {
+    this.administracaoBlusaService
+      .findaAll()
+      .subscribe((response) => (this.administracaoBlusasMasculinas = response.filter((blusasMasculinas) => {
+        if (blusasMasculinas.genero == 'masculino') {
+          return blusasMasculinas
+        }
+      })));
+  }
 
-   findAllAdministracaoBlusasFemininas() {
-     this.administracaoBlusaService
-       .findaAll()
-       .subscribe((Response) => (this.administracaoBlusasFemininas = Response.filter((blusasFemininas) => {
-         if (blusasFemininas.genero == 'feminino') {
-           return blusasFemininas
-         }
-       })));
-   }
+  findAllAdministracaoBlusasFemininas() {
+    this.administracaoBlusaService
+      .findaAll()
+      .subscribe((response) => (this.administracaoBlusasFemininas = response.filter((blusasFemininas) => {
+        if (blusasFemininas.genero == 'feminino') {
+          return blusasFemininas
+        }
+      })));
+  }
 
-   deleteByIdMasculinas() {
-     this.administracaoBlusaService.deleteById(this.idDelete).subscribe(() => this.findAllAdministracaoBlusasMasculinas());
-     this.modal(null)
-   }
+  deleteByIdMasculinas() {
+    this.administracaoBlusaService.deleteById(this.idDelete).subscribe(() => this.findAllAdministracaoBlusasMasculinas());
+  }
 
-   deleteByIdFemininas() {
-     this.administracaoBlusaService.deleteById(this.idDelete).subscribe(() => this.findAllAdministracaoBlusasFemininas());
-     this.modal(null)
-   }
+  deleteByIdFemininas() {
+    this.administracaoBlusaService.deleteById(this.idDelete).subscribe(() => this.findAllAdministracaoBlusasFemininas());
+  }
 
-   modal(id?: number, genero?: String) {
-     if(id) {
-       this.idDelete = id
-     }
 
-     if(genero) {
-       this.generoDelete = genero
-     }
+  modal(event?:any) {
+    console.log(event)
 
-     const modalActivated = document.querySelector('.modal')
-     modalActivated.classList.toggle('inactive')
-   }
+    if(event){
+      const {id, genero} = event
+      this.idDelete = id
+      this.generoDelete = genero
+    }
 
-   deleteItem() {
-    if(this.generoDelete == 'masculino') {
+    const modalActivated = document.querySelector('.modal')
+    modalActivated.classList.toggle('inactive')
+  }
+
+  deleteItem() {
+    if (this.generoDelete == 'masculino') {
       this.deleteByIdMasculinas()
     } else {
       this.deleteByIdFemininas()
     }
 
-   }
+    const modalActivated = document.querySelector('.modal')
+    modalActivated.classList.toggle('inactive')
+
+  }
 
 }

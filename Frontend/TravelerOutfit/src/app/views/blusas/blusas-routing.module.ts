@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BlusasFemininasListComponent } from './blusasFemininas-list.component';
+import { BlusasListComponent } from './blusas-list.component';
 
 const routes: Routes = [
 
     {
-        path: '',
-        component: BlusasFemininasListComponent
+        path: ':genero',
+        component: BlusasListComponent
     }
 
 ];
@@ -15,4 +15,4 @@ const routes: Routes = [
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule],
 })
-export class BlusasFemininasRoutingModule { }
+export class BlusasRoutingModule { }

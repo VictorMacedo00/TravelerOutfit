@@ -35,5 +35,9 @@ export class AdministracaoBlusaService {
         }
     }
 
+    findByGenero(genero: String): Observable<AdministracaoBlusa[]> {
+        return this.http.get<AdministracaoBlusa[]>(`${this.url}/genero/${genero}`);
+    }
+
 
 }

@@ -1,0 +1,7 @@
+<div class="bannerPrincipal" [ngClass]="genero == 'feminino'? 'bannerFeminino': 'bannerMasculino'">
+  <div class="containerPrincipal">
+    <h1>Moda {{ genero == 'feminino'? 'Feminina' : 'Masculina' }}</h1>
+  </div>
+</div>
+
+<app-blusasCard [blusas]="blusas"></app-blusasCard>

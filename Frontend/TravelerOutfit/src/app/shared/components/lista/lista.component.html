@@ -1,0 +1,26 @@
+<div class="container">
+  <table class="table padding">
+    <caption>{{ tituloLista }}</caption>
+    <tr>
+      <th>Nome</th>
+      <th>Preço</th>
+      <th>Marca</th>
+      <th>Tamanho</th>
+      <th>Genero</th>
+      <th>Cor</th>
+      <th>Ações</th>
+    </tr>
+    <tr *ngFor="let blusas of listaBlusas">
+      <td>{{ blusas.nome }}</td>
+      <td>{{ blusas.preco }}</td>
+      <td>{{ blusas.marca }}</td>
+      <td>{{ blusas.tamanho }}</td>
+      <td>{{ blusas.genero }}</td>
+      <td>{{ blusas.cor }}</td>
+      <td class="btn">
+        <button [routerLink]="['alterar', blusas.id]">Editar</button>
+        <button (click)="openModal(blusas.id, blusas.genero)">Deletar</button>
+      </td>
+    </tr>
+  </table>
+</div>

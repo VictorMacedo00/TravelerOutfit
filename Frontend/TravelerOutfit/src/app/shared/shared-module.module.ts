@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BlusasCardComponent } from './components/card/blusasCard.component';
-
+import { ListaComponent } from './components/lista/lista.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
-  declarations: [BlusasCardComponent],
+  declarations: [BlusasCardComponent, ListaComponent],
   imports: [
-    CommonModule
+    CommonModule, RouterModule
   ],
   exports: [
-    BlusasCardComponent
+    BlusasCardComponent,
+    ListaComponent
   ]
 })
 export class SharedModuleModule { }

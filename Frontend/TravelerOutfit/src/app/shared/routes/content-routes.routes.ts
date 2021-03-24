@@ -11,12 +11,8 @@ export const CONTENT_ROUTES: Routes = [
             loadChildren: () => import('../../views/administracao/administracaoBlusa.module').then((m) => m.AdministracaoBlusaModule)
     },
     {
-        path: 'blusasMasculinas',
-            loadChildren: () => import('../../views/blusasMasculinas/blusasMasculinas.module').then((m) => m.BlusasMasculinasModule)
-    },
-    {
-        path: 'blusasFemininas',
-            loadChildren: () => import('../../views/blusasFemininas/blusasFemininas.module').then((m) => m.BlusasFemininasModule)
+        path: 'blusas',
+            loadChildren: () => import('../../views/blusas/blusas.module').then((m) => m.BlusasModule)
     }
     
 ];

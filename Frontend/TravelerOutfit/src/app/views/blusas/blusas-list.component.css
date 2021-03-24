@@ -1,0 +1,36 @@
+.bannerPrincipal {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.containerPrincipal {
+  width: 960px;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerPrincipal h1 {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 4rem;
+  color: #fff;
+  border-bottom: 3px solid #fff;
+}
+
+.bannerMasculino {
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2)), url(./../../shared/imgs/blusasMasculinas/bannerPrincipal.jpg);
+}
+
+.bannerFeminino {
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2)), url(./../../shared/imgs/blusasFemininas/bannerFemininoPrincipal.jpg);
+}
